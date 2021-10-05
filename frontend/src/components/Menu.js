@@ -1,19 +1,20 @@
 import React from 'react'
+import {HashRouter, Route, Link} from 'react-router-dom'
 
 
 const NavMenu = () => {
    return (
-       <tr>
-           <td>
-               <a href='#'>Main</a>
-           </td>
-           <td>
-               <a href='#'>About</a>
-           </td>
-           <td>
-               <a href='#'>Contacts</a>
-           </td>
-       </tr>
+            <nav>
+            <ul>
+              <li>
+                <Link to='/'>Authors</Link>
+              </li>
+              <li>
+                <Link to='/project'>Project</Link>
+              </li>
+            </ul>
+          </nav>
+
    )
 }
 
