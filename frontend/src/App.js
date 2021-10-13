@@ -7,7 +7,7 @@ import ProjectList from './components/Project.js'
 import TodoList from './components/Todo.js'
 import Footer from './components/Footer.js'
 import NavMenu from './components/Menu.js'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch, Redirect, Link} from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -21,7 +21,7 @@ class App extends React.Component {
        }
    }
 
-    componentDidMount() {
+    load_data() {
         axios.get('http://127.0.0.1:8000/api/users/')
         .then(response => {
             const users = response.data.results
@@ -46,6 +46,11 @@ class App extends React.Component {
             })
         })
         .catch(error => console.log(error))
+    }
+
+
+    componentDidMount() {
+        this.load_data()
         }
 
 
